@@ -1,0 +1,66 @@
+﻿<Window x:Class="WpfApp2.UpdateWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:WpfApp2"
+        Background="{DynamicResource backgroundImage}"
+        mc:Ignorable="d"
+        Title="UpdateWindow1" Height="450" Width="800" FontSize="16">
+
+    <Window.Resources>
+
+        <ImageSource x:Key="imgSource">C:/Users/nikol/source/repos/WpfApp2/WpfApp2/bin/Debug/net5.0-windows/food.jpg</ImageSource>
+        <ImageBrush x:Key="backgroundImage" ImageSource="{DynamicResource imgSource}" Opacity="0.8"></ImageBrush>
+
+    </Window.Resources>
+    
+    <Grid Margin="20">
+        <!-- margines-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+            <!--wpisuję mmnożnik żeby mieć większe jeden komponent -->
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="2" Content="Danie:" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+        <Label Grid.Row="0" Grid.Column="3" Content="Kraj pochodzenia:" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+       <!-- <Label Grid.Row="2" Grid.Column="0" Content="Ulepsz swój przepis:" FontWeight="Bold" /> -->
+
+
+        <TextBox Grid.Row="1" Grid.Column="2" Name="txtName" FontFamily="Comic Sans MS"/>
+        <TextBox Grid.Row="1" Grid.Column="3" Name="txtCountry" FontFamily="Comic Sans MS"/>
+        <Image Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" x:Name="imgPhoto" />
+       <!-- <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="40" FontFamily="Bradley Hand ITC" TextWrapping="Wrap"
+        Text="Ulepsz swój przepis:" /> -->
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="36" FontWeight="Bold"  TextWrapping="Wrap" FontFamily="Franklin Gothic Demi">
+        Ulepsz swój przepis ze   <Hyperlink NavigateUri="https://www.https://www.kwestiasmaku.com" RequestNavigate="Hyperlink_RequestNavigate" > stroną. </Hyperlink>
+        </TextBlock>
+
+
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Name="textDescription" TextWrapping="Wrap" Background="LightYellow" />
+
+       <!-- <Button Style="{DynamicResource ButtonStyle}" Grid.Row="3" Grid.Column="0" Name="btnLoadPhoto" Content="Wczytaj zdjęcie" Margin="2" Click="btnLoadPhoto_Click"/> -->
+        <Button Style="{DynamicResource ButtonStyle}" Grid.Row="3" Grid.Column="1" Name="btnSave" Content="Zapisz" Margin="2" Click="btnSave_Click"/> 
+        <!--<Button Style="{DynamicResource ButtonStyle}" Grid.Row="3" Grid.Column="0" Name="btnClose" Content="Zamknij" Margin="2" Click="btnClose_Click"/>-->
+
+
+       <!-- <Button Grid.Row="3" Grid.Column="0" Content="Utwórz" Name="btnCreate" FontSize="18" FontWeight="Bold"/> -->
+        <Button Grid.Row="3" Grid.Column="1" Content="Zapisz" Name="btnEdit" FontSize="18" FontWeight="Bold" Click="btnSave_Click" Background="Yellow" FontFamily="Comic Sans MS"/> 
+        <!--<Button Grid.Row="3" Grid.Column="2" Content="Usuń" Name="btnDelete" FontSize="18" FontWeight="Bold" /> -->
+        <Button Grid.Row="3" Grid.Column="3" Content="Zamknij" Name="btnClose" FontSize="18" FontWeight="Bold" Click="btnClose_Click" Background="Yellow" FontFamily="Comic Sans MS"/>
+
+
+
+    </Grid>
+</Window>
